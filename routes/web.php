@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\GenreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,8 +36,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/genres', function () {
-    return Inertia::render('IndexGenres');})
-->name('genres');
+Route::controller(GenreController::class)->group(function () {
+    Route::get('/genres', 'index');
+    Route::get('/genres/{id}', 'show');
+    Route::post('/genres', 'store');
+});
 
 require __DIR__.'/auth.php';

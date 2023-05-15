@@ -9,6 +9,27 @@ import NavLink from '../Components/NavLink.vue';
 	  <Head title="Genres" />
 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">Dashboard</NavLink>
 
-	<div>Ici viendra la table des genres et familles</div>
+	<table>
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>Nom latin</th>
+				<th>Nom vernaculaire</th>
+				<th>Famille</th>
+			</tr>
+
+
+		</thead>
+		<tbody v-for="genre in genres">
+			<tr>
+				<td>{{ genre.id }}</td>
+				<td>{{ genre.nom }}</td>
+				<td>{{ genre.vernaculaire }}</td>
+				<td>{{ genre.famille }}</td>
+			</tr>
+
+		</tbody>
+
+	</table>
 
 </template>
