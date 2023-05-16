@@ -3,12 +3,6 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import NavLink from '../Components/NavLink.vue';
 
-const props = defineProps({
-    blogs: {
-        type: Object,
-        default: () => ({}),
-    },
-});
 
 </script>
 
