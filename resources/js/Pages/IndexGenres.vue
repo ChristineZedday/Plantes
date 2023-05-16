@@ -2,6 +2,14 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import NavLink from '../Components/NavLink.vue';
+
+const props = defineProps({
+    blogs: {
+        type: Object,
+        default: () => ({}),
+    },
+});
+
 </script>
 
 
@@ -20,8 +28,8 @@ import NavLink from '../Components/NavLink.vue';
 
 
 		</thead>
-		<tbody v-for="genre in genres">
-			<tr>
+		<tbody>
+			<tr v-for="genre in genres" v-bind:key = "genre.id">
 				<td>{{ genre.id }}</td>
 				<td>{{ genre.nom }}</td>
 				<td>{{ genre.vernaculaire }}</td>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Genre;
+use Inertia\Inertia;
 
 class GenreController extends Controller
 {
@@ -13,8 +15,9 @@ class GenreController extends Controller
      */
     public function index()
     {
-        $genres = Genre::all()->get();
-        return Inertia::render('IndexGenres',compact("genres"));
+        $genres = Genre::all();
+        //dd($genres);
+        return Inertia::render('IndexGenres',['genres'=> $genres]);
     }
 
     /**
