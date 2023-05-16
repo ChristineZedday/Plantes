@@ -37,9 +37,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::controller(GenreController::class)->group(function () {
-    Route::get('/genres', 'index');
-    Route::get('/genres/{id}', 'show');
-    Route::post('/genres', 'store');
+    Route::get('/genres', 'index')->name('genres');
+    Route::get('/genres/{id}', 'show')->name('genre');
+    Route::post('/genres', 'store')->name('genre.store');
 });
 
 require __DIR__.'/auth.php';
