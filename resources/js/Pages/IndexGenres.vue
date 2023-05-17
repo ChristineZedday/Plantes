@@ -8,10 +8,7 @@ import NavLink from '../Components/NavLink.vue';
 
 export default {
   props: ['genres'],
-  created() {
-    // props are exposed on `this`
-    console.log(this.genres)
-  }
+ 
 }
 
 
