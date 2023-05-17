@@ -115,15 +115,15 @@ const showingNavigationDropdown = ref(false);
                     class="sm:hidden"
                 >
                     <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                        <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Tableau de bord
-                        </ResponsiveNavLink>
+                        </NavLink>
                     
 
                    
-                        <ResponsiveNavLink :href="route('genres')" >
+                        <NavLink :href="route('genres')" >
                             Genres
-                        </ResponsiveNavLink>
+                        </NavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->

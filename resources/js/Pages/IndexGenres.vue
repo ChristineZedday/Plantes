@@ -1,10 +1,23 @@
-<script setup>
+<script>
+
+
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import NavLink from '../Components/NavLink.vue';
 
 
+export default {
+  props: ['genres'],
+  created() {
+    // props are exposed on `this`
+    console.log(this.genres)
+  }
+}
+
+
 </script>
+
+
 
 
 <template>
