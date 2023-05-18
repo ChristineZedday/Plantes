@@ -27,7 +27,7 @@ class GenreController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('NouveauGenre');
     }
 
     /**
@@ -38,7 +38,19 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nom' => 'required|string|max:255',
+            'vernaculaire' => 'required|string|max:255',
+            'famille' => 'required|string|max:255',
+        ]);
+        Genre::create([
+            'nom' => $request->nom,
+            'vernaculaire' => $request->vernaculaire,
+            'famille' => $request->famille
+        ]);
+        sleep(1);
+
+        return redirect()->route('genres')->with('message', 'Genre ajouté avec succès');
     }
 
     /**

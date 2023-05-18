@@ -1,25 +1,41 @@
 <script>
 
 
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+import MonLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import NavLink from '../Components/NavLink.vue';
 
 
 export default {
   props: ['genres'],
+  components: {
+	MonLayout,
+	NavLink
+  }
  
 }
 
 
 </script>
+<style>
+table {
+	width: 90%;
+}
+th {
+	height: 50px;
+	}
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+</style>
 
 
 
 
 <template>
-	  <Head title="Genres" />
-<NavLink :href="route('dashboard')" :active="route().current('dashboard')">Dashboard</NavLink>
+	<MonLayout>
+	<template v-slot:main>	
 
 	<table>
 		<thead>
@@ -43,5 +59,6 @@ export default {
 		</tbody>
 
 	</table>
-
+</template>
+	</MonLayout>
 </template>

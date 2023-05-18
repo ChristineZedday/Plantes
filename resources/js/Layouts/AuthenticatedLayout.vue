@@ -35,6 +35,9 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('genres')" :active="route('genres')">
                                     Genres
                                 </NavLink>
+                                 <NavLink :href="route('genre.create')" :active="route('genre.create')">
+                                    Ajouter un genre
+                                </NavLink>
                             </div>
                         </div>
 
@@ -124,6 +127,9 @@ const showingNavigationDropdown = ref(false);
                         <NavLink :href="route('genres')" >
                             Genres
                         </NavLink>
+                        <NavLink :href="route('genre.create')" >
+                            Ajouter un genre
+                        </NavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->
@@ -153,9 +159,9 @@ const showingNavigationDropdown = ref(false);
             </header>
 
             <!-- Page Content -->
-            <!--main>
-                <slot />
-            </main -->
+            <main>
+                <slot name="main"/>
+            </main>
         </div>
     </div>
 </template>
