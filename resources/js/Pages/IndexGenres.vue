@@ -10,7 +10,7 @@ export default {
   props: ['genres'],
   components: {
 	MonLayout,
-	NavLink
+	
   }
  
 }
