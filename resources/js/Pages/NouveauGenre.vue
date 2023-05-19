@@ -1,5 +1,6 @@
 <script>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+
 import { Head } from "@inertiajs/inertia-vue3";
 
 import { useForm } from "@inertiajs/inertia-vue3";
@@ -7,6 +8,7 @@ import { useForm } from "@inertiajs/inertia-vue3";
  export default {
 	components: {
 	AuthenticatedLayout,
+	
 	
   },
 
@@ -49,7 +51,7 @@ form {
 	<template v-slot:main>
 	<Head title="Ajouter un genre" />
 	
-		<form @submit.prevent="submit">
+		<form @submit.prevent="form.post(route('genre.store'))">
           <div class="partform">
 			<label for="nom" class="partform">Nom latin</label>
 			<input v-model="form.nom" name="nom" type="text"/>
@@ -61,9 +63,10 @@ form {
 		  <div class="partform">
 			<label for="famille" class="partform">Famille</label>
 			<input v-model="form.famille" name="famille" type="text"/>
-		  </div>   
+		  </div> 
+		  
 		  <button type = "submit" class="partform">
-                                Valider
+                      Valider          
                             </button>
                            
         </form>
