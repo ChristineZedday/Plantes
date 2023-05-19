@@ -29,25 +29,40 @@ import { useForm } from "@inertiajs/inertia-vue3";
 
 </script>
 
+<style>
+form {
+	text-align: center;
+	padding: 50px;
+	margin: 50px;
+
+}
+.partform {
+	padding: 25px;
+	margin: 25px;
+}
+
+ 
+</style>
+
 <template>
 	<AuthenticatedLayout>
 	<template v-slot:main>
 	<Head title="Ajouter un genre" />
 	
 		<form @submit.prevent="submit">
-          <div>
-			<label for="nom">Nom latin</label>
+          <div class="partform">
+			<label for="nom" class="partform">Nom latin</label>
 			<input v-model="form.nom" name="nom" type="text"/>
 		  </div>
-		  <div>
-			<label for="vernaculaire">Nom vernaculaire</label>
+		  <div class="partform">
+			<label for="vernaculaire" class="partform">Nom vernaculaire</label>
 			<input v-model="form.vernaculaire" name="vernaculaire" type="text"/>
 		  </div>   
-		  <div>
-			<label for="famille">Famille</label>
+		  <div class="partform">
+			<label for="famille" class="partform">Famille</label>
 			<input v-model="form.famille" name="famille" type="text"/>
 		  </div>   
-		  <button type = "submit">
+		  <button type = "submit" class="partform">
                                 Valider
                             </button>
                            
