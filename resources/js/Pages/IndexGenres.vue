@@ -1,7 +1,7 @@
 <script>
 
 
-import MonLayout from '@/Layouts/AuthenticatedLayout.vue';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import NavLink from '../Components/NavLink.vue';
 
@@ -9,7 +9,7 @@ import NavLink from '../Components/NavLink.vue';
 export default {
   props: ['genres'],
   components: {
-	MonLayout,
+	AuthenticatedLayout,
 	
   }
  
@@ -34,7 +34,7 @@ th, td {
 
 
 <template>
-	<MonLayout>
+	<AuthenticatedLayout>
 	<template v-slot:main>	
 
 	<table>
@@ -60,5 +60,5 @@ th, td {
 
 	</table>
 </template>
-	</MonLayout>
+</AuthenticatedLayout>
 </template>

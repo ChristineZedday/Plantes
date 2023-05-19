@@ -1,12 +1,12 @@
 <script>
-import MonLayout from '@/Layouts/MonLayout.vue';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from "@inertiajs/inertia-vue3";
 
 import { useForm } from "@inertiajs/inertia-vue3";
 
  export default {
 	components: {
-	MonLayout,
+	AuthenticatedLayout,
 	
   },
 
@@ -30,7 +30,7 @@ import { useForm } from "@inertiajs/inertia-vue3";
 </script>
 
 <template>
-	<MonLayout>
+	<AuthenticatedLayout>
 	<template v-slot:main>
 	<Head title="Ajouter un genre" />
 	
@@ -53,5 +53,5 @@ import { useForm } from "@inertiajs/inertia-vue3";
                            
         </form>
 	</template>
-</MonLayout>
+</AuthenticatedLayout>
 </template>
