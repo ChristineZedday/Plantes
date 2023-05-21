@@ -11,21 +11,20 @@ import { useForm } from "@inertiajs/inertia-vue3";
 	
 	
   },
-  props: {
-        genre: Object,
-       
-    },
-    setup(props) {
-        const form = useForm(props.genre)
-        return { form }
-    },
+  props: [genre],
 	data (){
 		return {
 			genre: this.genre,
 		}
+	},
+    setup() {
+        const form = useForm(data.genre)
+        return { form }
+    },
+	
 
 	}
-}
+
 
    /* setup() {	
 		const props = defineProps({
@@ -77,7 +76,7 @@ form {
 	
 		<form @submit.prevent="form.put(route('genre.update',props.genre.id))">
           <div class="partform">
-			<label for="nom" class="partform">Nom latin</label>
+			<label for="nom" class="partform">Nom latin {{ this.props.genre.nom }}</label>
 			<input v-model="form.nom" name="nom" type="text" />
 		  </div>
 		  <div class="partform">
