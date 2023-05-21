@@ -61,7 +61,9 @@ class GenreController extends Controller
      */
     public function show($id)
     {
-        //
+        $genre = Genre::find($id);
+      
+        return Inertia::render('ShowGenre',['genre'=> $genre]);
     }
 
     /**
