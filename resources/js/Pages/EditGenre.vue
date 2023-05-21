@@ -11,29 +11,45 @@ import { useForm } from "@inertiajs/inertia-vue3";
 	
 	
   },
- 
+  props: {
+        genre: Object,
+       
+    },
+    setup(props) {
+        const form = useForm(props.genre)
+        return { form }
+    },
+	data (){
+		return {
+			genre: this.genre,
+		}
 
-    setup() {	
+	}
+}
+
+   /* setup() {	
 		const props = defineProps({
     genre: {
-        type: Object,
-        default: () => ({}),
+		id: Number,
+       nom: String,
+	   vernaculaire: String,
+	   famille: String,
     },
 });	
 		const form =  useForm({
-			id: props.genre.id,
-        	nom: props.genre.nom,
-        	vernaculaire: props.genre.vernaculaire,
-        	famille: props.genre.famille,
+			id: this.genre.id,
+        	nom: this.genre.nom,
+        	vernaculaire: this.genre.vernaculaire,
+        	famille: this.genre.famille,
     }),
 	submit = () => {
-    form.post(route('genre.update'));
+    form.put(route('genre.update'));
 };
 	return {
 	form, 
 	}
 	}
-	}
+	}*/
 
 
 
@@ -66,7 +82,7 @@ form {
 		  </div>
 		  <div class="partform">
 			<label for="vernaculaire" class="partform">Nom vernaculaire</label>
-			<input v-model="genre.vernaculaire" name="vernaculaire" type="text" />
+			<input v-model="form.vernaculaire" name="vernaculaire" type="text" />
 		  </div>   
 		  <div class="partform">
 			<label for="famille" class="partform">Famille</label>
