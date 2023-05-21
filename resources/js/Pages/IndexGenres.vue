@@ -44,6 +44,7 @@ th, td {
 				<th>Nom latin</th>
 				<th>Nom vernaculaire</th>
 				<th>Famille</th>
+				<th>Actions</th>
 			</tr>
 
 
@@ -54,6 +55,7 @@ th, td {
 				<td>{{ genre.nom }}</td>
 				<td>{{ genre.vernaculaire }}</td>
 				<td>{{ genre.famille }}</td>
+				<td><a :href="route('genre.edit', genre.id)">Modifier</a></td>
 			</tr>
 
 		</tbody>

@@ -72,7 +72,8 @@ class GenreController extends Controller
      */
     public function edit($id)
     {
-        //
+        $genre = Genre::find($id);
+        return Inertia::render('NouveauGenre', ['genre' => $genre]);
     }
 
     /**
@@ -84,7 +85,7 @@ class GenreController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd('dans update');
     }
 
     /**
