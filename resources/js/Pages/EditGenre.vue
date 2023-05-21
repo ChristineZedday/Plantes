@@ -6,12 +6,13 @@ import { Head } from "@inertiajs/inertia-vue3";
 import { useForm } from "@inertiajs/inertia-vue3";
 
  export default {
+	props: [genre],
 	components: {
 	AuthenticatedLayout,
 	
 	
   },
-  props: [genre],
+  
 	data (){
 		return {
 			genre: this.genre,
