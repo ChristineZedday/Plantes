@@ -10,6 +10,7 @@ export default {
   props: ['genres'],
   components: {
 	AuthenticatedLayout,
+	NavLink,
 	
   }
  
@@ -36,7 +37,9 @@ th, td {
 <template>
 	<AuthenticatedLayout>
 	<template v-slot:main>	
-
+		<NavLink :href="route('genre.edit')" >
+                            Ajouter un genre
+                        </NavLink>
 	<table>
 		<thead>
 			<tr>

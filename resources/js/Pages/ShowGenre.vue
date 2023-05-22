@@ -1,5 +1,6 @@
 <script>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+import NavLink from '../Components/NavLink.vue';
 
 
 
@@ -7,6 +8,7 @@ export default {
   props: ['genre'],
   components: {
     AuthenticatedLayout,
+	NavLink,
 },
 }
 </script>
@@ -16,6 +18,9 @@ export default {
 			<h1>Genre: {{ genre.nom }} </h1>
 			<h2>Nom vernaculaire: {{ genre.vernaculaire }}</h2>
 			<h2>Famille: {{ genre.famille }}</h2>
+			<NavLink :href="route('genre.edit')" >
+                            Ajouter un genre
+                        </NavLink>
 		</template>
 	</AuthenticatedLayout>
 </template>
