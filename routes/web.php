@@ -43,6 +43,7 @@ Route::controller(GenreController::class)->group(function () {
     Route::post('/genre/store', 'store')->name('genre.store');
     Route::get('/genre/edit/{id}', 'edit')->name('genre.edit');
     Route::post('/genre/update/{id}', 'update')->name('genre.update');
+    Route::get('/genre/delete/{id}', 'destroy')->name('genre.delete');
 });
 
 require __DIR__.'/auth.php';

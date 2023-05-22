@@ -112,12 +112,12 @@ class GenreController extends Controller
      */
     public function destroy($id)
     {
-        if ($request->has('id')) {
+        
 
-            Genre::find($request->input('id'))->delete();
+            Genre::find($id)->delete();
 
             return redirect()->back();
 
-        }
+        
     }
 }

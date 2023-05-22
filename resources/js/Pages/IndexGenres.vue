@@ -58,7 +58,7 @@ th, td {
 				<td>{{ genre.nom }}</td>
 				<td>{{ genre.vernaculaire }}</td>
 				<td>{{ genre.famille }}</td>
-				<td><a :href="route('genre.edit', genre.id)">Modifier</a> <a :href="route('genre', genre.id)">Voir</a></td>
+				<td><a :href="route('genre.edit', genre.id)">Modifier</a> <a :href="route('genre', genre.id)">Voir</a> <a :href="route('genre.delete', genre.id)">Effacer</a></td>
 			</tr>
 
 		</tbody>
