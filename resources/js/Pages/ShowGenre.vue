@@ -18,8 +18,8 @@ export default {
 			<h1>Genre: {{ genre.nom }} </h1>
 			<h2>Nom vernaculaire: {{ genre.vernaculaire }}</h2>
 			<h2>Famille: {{ genre.famille }}</h2>
-			<NavLink :href="route('genre.edit')" >
-                            Ajouter un genre
+			<NavLink :href="route('genre.edit', genre.id)" >
+                            Modifier
                         </NavLink>
 		</template>
 	</AuthenticatedLayout>

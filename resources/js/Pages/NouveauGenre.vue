@@ -17,10 +17,8 @@ import { useForm } from "@inertiajs/inertia-vue3";
         	nom: '',
         	vernaculaire: '',
         	famille: '',
-    }),
-	submit = () => {
-    form.post(route('genre.store'));
-};
+    })
+	
 	return {
 	form, 
 	}

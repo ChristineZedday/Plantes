@@ -75,7 +75,7 @@ class GenreController extends Controller
     public function edit($id)
     {
         $genre = Genre::find($id);
-        return Inertia::render('NouveauGenre', ['genre' => $genre]);
+        return Inertia::render('EditGenre', ['genre' => $genre, 'id' =>$id]);
     }
 
     /**

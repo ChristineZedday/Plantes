@@ -37,7 +37,7 @@ th, td {
 <template>
 	<AuthenticatedLayout>
 	<template v-slot:main>	
-		<NavLink :href="route('genre.edit')" >
+		<NavLink :href="route('genre.create')" >
                             Ajouter un genre
                         </NavLink>
 	<table>

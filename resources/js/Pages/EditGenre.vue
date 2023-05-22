@@ -1,3 +1,24 @@
+<script setup>	
+	const props = defineProps({
+    genre: {
+		id: Number,
+       nom: String,
+	   vernaculaire: String,
+	   famille: String,
+    },})
+	
+	const form =  useForm({
+        	nom: genre.nom,
+        	vernaculaire: genre.vernaculaire,
+        	famille: genre.famille,
+    })
+	
+	return {
+	form, 
+	}
+	}
+
+</script>
 <script>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 
@@ -6,25 +27,13 @@ import { Head } from "@inertiajs/inertia-vue3";
 import { useForm } from "@inertiajs/inertia-vue3";
 
  export default {
-	props: [genre],
 	components: {
 	AuthenticatedLayout,
 	
 	
   },
   
-	data (){
-		return {
-			genre: this.genre,
-		}
-	},
-    setup() {
-        const form = useForm(data.genre)
-        return { form }
-    },
-	
 
-	}
 
 
    /* setup() {	
@@ -77,7 +86,7 @@ form {
 	
 		<form @submit.prevent="form.put(route('genre.update',props.genre.id))">
           <div class="partform">
-			<label for="nom" class="partform">Nom latin {{ this.props.genre.nom }}</label>
+			<label for="nom" class="partform">Nom latin </label>
 			<input v-model="form.nom" name="nom" type="text" />
 		  </div>
 		  <div class="partform">
