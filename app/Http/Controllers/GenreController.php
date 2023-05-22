@@ -87,7 +87,21 @@ class GenreController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd('dans update');
+        $request->validate([
+            'nom' => 'required|string|max:255',
+            'vernaculaire' => 'required|string|max:255',
+            'famille' => 'required|string|max:255',
+        ]);
+
+        if ($request->has('id')) {
+
+            Genre::find($request->input('id'))->update($request->all());
+
+            return redirect()->back()
+
+                    ->with('message', 'Post Updated Successfully.');
+
+        }
     }
 
     /**
@@ -98,6 +112,12 @@ class GenreController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if ($request->has('id')) {
+
+            Genre::find($request->input('id'))->delete();
+
+            return redirect()->back();
+
+        }
     }
 }

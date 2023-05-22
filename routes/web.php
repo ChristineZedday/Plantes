@@ -38,11 +38,11 @@ Route::middleware('auth')->group(function () {
 
 Route::controller(GenreController::class)->group(function () {
     Route::get('/genres', 'index')->name('genres');
-    Route::get('/genre', 'create')->name('genre.create');
-    Route::get('/genre/{id}', 'show')->name('genre');
-    Route::post('/genre', 'store')->name('genre.store');
+    Route::get('/genre/create', 'create')->name('genre.create');
+    Route::get('/genre/show/{id}', 'show')->name('genre');
+    Route::post('/genre/store', 'store')->name('genre.store');
     Route::get('/genre/edit/{id}', 'edit')->name('genre.edit');
-    Route::post('/genre/update', 'update')->name('genre.update');
+    Route::post('/genre/update/{id}', 'update')->name('genre.update');
 });
 
 require __DIR__.'/auth.php';
