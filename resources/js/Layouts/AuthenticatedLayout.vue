@@ -32,12 +32,10 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
-                                <NavLink :href="route('genres')" :active="route('genres')">
+                                <a :href="route('genres')" :active="route('genres')">
                                     Genres
-                                </NavLink>
-                                 <NavLink :href="route('genre.create')" :active="route('genre.create')">
-                                    Ajouter un genre
-                                </NavLink>
+                                </a>
+                                 
                             </div>
                         </div>
 
