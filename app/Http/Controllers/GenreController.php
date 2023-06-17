@@ -75,7 +75,7 @@ class GenreController extends Controller
     public function edit($id)
     {
         $genre = Genre::find($id);
-        return Inertia::render('EditGenre', ['genre' => $genre, 'id' =>$id]);
+        return Inertia::render('EditGenre', ['genre' => $genre]);
     }
 
     /**
@@ -97,12 +97,11 @@ class GenreController extends Controller
 
             Genre::find($request->input('id'))->update($request->all());
 
-            return redirect()->back()
-
-                    ->with('message', 'Post Updated Successfully.');
-
+            return redirect()->route('genres')->with('message', 'Genre modifié avec succès');
         }
+
     }
+    
 
     /**
      * Remove the specified resource from storage.

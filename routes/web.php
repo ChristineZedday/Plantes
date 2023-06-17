@@ -42,7 +42,7 @@ Route::controller(GenreController::class)->group(function () {
     Route::get('/genre/show/{id}', 'show')->name('genre');
     Route::post('/genre/store', 'store')->name('genre.store');
     Route::get('/genre/edit/{id}', 'edit')->name('genre.edit');
-    Route::post('/genre/update/{id}', 'update')->name('genre.update');
+    Route::put('/genre/update/{id}', 'update')->name('genre.update');
     Route::get('/genre/delete/{id}', 'destroy')->name('genre.delete');
 });
 
